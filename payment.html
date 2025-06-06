@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payment - Matcha Beyond</title>
+  <style>
+    body {
+      background: url('background.avif') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      padding: 40px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      color: #bfff00;
+      margin-bottom: 25px;
+    }
+    form {
+      max-width: 500px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      cursor: pointer;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="radio"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .payment-method {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .payment-method label {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .payment-method label span {
+      margin-left: 8px;
+    }
+    .payment-method img {
+      height: 30px;
+      margin-left: 10px;
+      user-select: none;
+    }
+    button {
+      width: 100%;
+      background-color: #00cc44;
+      color: black;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00e65c;
+    }
+    .card-details {
+      display: none;
+    }
+  </style>
+  <script>
+    function toggleCardDetails() {
+      const cardDetails = document.getElementById('card-details');
+      const cardRadio = document.getElementById('pay-card');
+      if (cardRadio.checked) {
+        cardDetails.style.display = 'block';
+      } else {
+        cardDetails.style.display = 'none';
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Payment Method</h2>
+
+  <form action="thankyou.html" method="post">
+    <div class="payment-method">
+      <label>
+        <input type="radio" name="payment" id="pay-card" value="card" onclick="toggleCardDetails()" required>
+        <span>Credit/Debit Card</span>
+        <img src="pay.jpg" alt="Payment Options">
+      </label>
+      
+      <label style="flex-grow: 0;">
+        <input type="radio" name="payment" id="pay-cash" value="cash" onclick="toggleCardDetails()">
+        Cash on Delivery
+      </label>
+    </div>
+
+    <div id="card-details" class="card-details">
+      <label for="card-number">Card Number</label>
+      <input type="text" id="card-number" name="card-number" maxlength="16" pattern="\d{16}" placeholder="1234 5678 9012 3456">
+
+      <label for="expiry">Expiry Date (MM/YY)</label>
+      <input type="text" id="expiry" name="expiry" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/\d{2}">
+
+      <label for="cvv">CVV</label>
+      <input type="number" id="cvv" name="cvv" maxlength="3" pattern="\d{3}" placeholder="123">
+    </div>
+
+    <button type="submit">Confirm Payment</button>
+  </form>
+
+</body>
+</html>
+
+

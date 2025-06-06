@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign In - Matcha Beyond</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 12px;
+      width: 300px;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(0, 128, 0, 0.4);
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 1.5rem;
+      color: #a8e063;
+    }
+
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 0.6rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .btn {
+      background-color: #56ab2f;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #3c8d2f;
+    }
+
+    .back-link {
+      margin-top: 1rem;
+      display: inline-block;
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+      color: #a8e063;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2><i class="fas fa-sign-in-alt"></i> Sign In</h2>
+    <form id="signin-form">
+      <input type="email" id="email" placeholder="Email" required /><br />
+      <input type="password" id="password" placeholder="Password" required /><br />
+      <button type="submit" class="btn">Sign In</button>
+    </form>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+
+  <script>
+    // Your Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyCC8EHRPCSt2ckEKvm69o07cWX1hxCOZq8",
+      authDomain: "matcha-beyond.firebaseapp.com",
+      projectId: "matcha-beyond",
+      storageBucket: "matcha-beyond.appspot.com",
+      messagingSenderId: "483224011271",
+      appId: "1:483224011271:web:c323f9d7ab62a426e7e0a2"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Sign-in Logic
+    document.getElementById("signin-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          alert("Login successful!");
+          window.location.href = "shop.html"; // Redirect to shop
+        })
+        .catch((error) => {
+          alert("Error: " + error.message);
+        });
+    });
+  </script>
+</body>
+</html>
+
+

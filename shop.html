@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matcha Beyond - Shop</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: url('background.avif') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    .logo h1 {
+      color: #99e600;
+      font-size: 28px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #99e600;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin: 50px 0 20px;
+      color: #bfff00;
+      animation: popIn 1.5s ease;
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 20px 50px;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      backdrop-filter: blur(5px);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border-radius: 12px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #99ff33;
+      font-size: 18px;
+    }
+
+    button {
+      background-color: #00cc44;
+      color: black;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #00e65c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="brand name.jpg" alt="Logo">
+      <h1>Matcha Beyond</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="section-title">Matcha Drink Collection</h2>
+    <div class="card-container">
+
+      <!-- 12 Product Cards -->
+      <div class="card">
+        <img src="classic_matcha_tea.webp" alt="Classic Matcha Tea">
+        <h3>Classic Matcha Tea</h3>
+        <p>Rich ceremonial matcha served chilled or hot.</p>
+        <p class="price">Rs. 950</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="iced_matcha_latte.jpg" alt="Iced Matcha Latte">
+        <h3>Iced Matcha Latte</h3>
+        <p>Refreshing summer drink with almond milk base.</p>
+        <p class="price">Rs. 1,200</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="matcha_smoothie.jpg" alt="Matcha Smoothie">
+        <h3>Matcha Smoothie</h3>
+        <p>Blended green power with banana & honey.</p>
+        <p class="price">Rs. 1,350</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="matcha_bubble_tea.jpg" alt="Matcha Bubble Tea">
+        <h3>Matcha Bubble Tea</h3>
+        <p>Fun chewy pearls with matcha fusion.</p>
+        <p class="price">Rs. 1,100</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="mint_matcha_cooler.jpg" alt="Mint Matcha Cooler">
+        <h3>Mint Matcha Cooler</h3>
+        <p>Mint leaves and lime with pure matcha.</p>
+        <p class="price">Rs. 980</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="coconut_matcha_frape.jpg" alt="Coconut Matcha Frappe">
+        <h3>Coconut Matcha Frappe</h3>
+        <p>Sweet and creamy tropical matcha treat.</p>
+        <p class="price">Rs. 1,200</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="matcha_choco_blend.jpg" alt="Matcha Choco Blend">
+        <h3>Matcha Choco Blend</h3>
+        <p>Matcha and chocolate swirl with oat milk.</p>
+        <p class="price">Rs. 1,300</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="strawberry_matcha_latte.jpg" alt="Strawberry Matcha Latte">
+        <h3>Strawberry Matcha Latte</h3>
+        <p>Fresh strawberry puree with creamy matcha.</p>
+        <p class="price">Rs. 1,250</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="matcha_espero_fusion.jpg" alt="Matcha Espresso Fusion">
+        <h3>Matcha Espresso Fusion</h3>
+        <p>Layered matcha and bold espresso shot.</p>
+        <p class="price">Rs. 1,400</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="vanila_matcha_cream.jpg" alt="Vanilla Matcha Cream">
+        <h3>Vanilla Matcha Cream</h3>
+        <p>Silky vanilla whipped matcha delight.</p>
+        <p class="price">Rs. 1,180</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="matcha_mango_shake.webp" alt="Matcha Mango Shake">
+        <h3>Matcha Mango Shake</h3>
+        <p>Fusion of sweet mango with earthy matcha.</p>
+        <p class="price">Rs. 1,280</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="matcha_rose_milk.jpg" alt="Matcha Rose Milk">
+        <h3>Matcha Rose Milk</h3>
+        <p>Delicate rose with matcha & cashew milk.</p>
+        <p class="price">Rs. 1,350</p>
+        <button onclick="window.location.href='cart.html'">Buy Now</button>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
+
+
+
+
