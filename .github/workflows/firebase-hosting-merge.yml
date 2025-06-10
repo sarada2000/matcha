@@ -11,9 +11,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-     
-      - run: npm install -g firebase-tools
-    
 
-      - run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - run: npm install -g firebase-tools
+
+      # If you don't have a build step, comment out or remove the next two lines:
+      - run: npm install
+      - run: npm run build
+
+      - run: firebase deploy --only hosting --project matcha-beyond --token ${{ secrets.FIREBASE_TOKEN }}
+
+
+
 
